@@ -1,0 +1,41 @@
+{% extends 'music/main.html' %}
+
+{% block a %}
+   <div class="albums-container container-fluid">
+     <h1 style="color:red">Here is my all Albums</h1>
+       <div class="row">
+           {% for album in object_list %}
+              <div class="col-sm-4 col-lg-2">
+                  <div class="thumbnail" id="thubm">
+                      <a href="{% url 'detail' album.id %}">
+                         <img src="{{album.album_logo.url}}" class="img-responsive" width="240px" >
+                      </a>
+
+                        <div class="caption">
+                        <h2>{{ album.album_title }}</h2>
+                        <h3>{{album.artist}}</h3>
+                        <a href="{% url 'detail' album.id %}" class="btn btn-primary btn-sm">View Details  </a>
+                            <form action="{% url 'album-delete' album.id %}" method="post" style="display: inline">
+                         {% csrf_token %}
+                        <!--<input type="hidden" name="movie_id" value="{{ movie_id }}"/>-->
+                          <button type="submit" class="btn btn-default btn-sm" />
+                           <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                        </form>
+         <form action="{% url 'album-update' album.id %}" method="post" style="display: inline">
+            {% csrf_token %}
+            <!--<input type="hidden" name="movie_id" value="{{ movie_id }}"/>-->
+            <button type="submit" class="btn btn-default btn-sm" />
+                <span class="glyphicon glyphicon-paperclip"></span>
+
+            </button>
+
+        </form>
+        {% endfor %}
+  
+{% endblock %}
+     </div>
+     </div>
+  </div>
+</div>
+</div>

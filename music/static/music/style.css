@@ -1,0 +1,27 @@
+body{
+    background: white url("images/marathi2.png");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#thubm{
+    width:79%;
+    margin-top: 15%;
+}
+#thubm.caption{
+    width: 29%;
+}
+.thumbnail a>img, .thumbnail>img{
+    margin-right: auto;
+    margin-left: 0px;
+}
+.btn-primary{
+    margin-left: -10px;
+}
+.panel{
+        margin-left: 20px;
+}
+
+.col-md-3{
+margin-left: -31px;
+}
